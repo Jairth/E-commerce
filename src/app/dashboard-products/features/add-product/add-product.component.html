@@ -1,0 +1,91 @@
+<hlm-sheet side="right">
+  <button class="custom-button" id="add-product" brnSheetTrigger>
+    Add product
+  </button>
+  <hlm-sheet-content *brnSheetContent="let ctx">
+    <h2 class="title">Add Product</h2>
+
+    <form class="flow" [formGroup]="productForm()" (ngSubmit)="addProduct(ctx)">
+      <hlm-form-field>
+        <label hlmLabel for="product-name">Product name</label>
+        <input
+          required
+          hlmInput
+          type="text"
+          id="product-name"
+          name="product-name"
+          placeholder="Product name"
+          formControlName="name"
+        />
+        <hlm-error>Your product name is required</hlm-error>
+      </hlm-form-field>
+      <hlm-form-field>
+        <label hlmLabel for="product-price">Product price</label>
+        <input
+          required
+          hlmInput
+          type="text"
+          id="product-price"
+          name="product-price"
+          placeholder="Product price"
+          formControlName="price"
+        />
+        <hlm-error>Your product price is required</hlm-error>
+      </hlm-form-field>
+
+      <hlm-form-field>
+        <label hlmLabel for="category">Product category</label>
+        <brn-select
+          class="inline-block"
+          placeholder="Product category"
+          formControlName="category"
+        >
+          <hlm-select-trigger>
+            <hlm-select-value />
+          </hlm-select-trigger>
+          <hlm-select-content>
+            <hlm-option value="Electronics">Electronics</hlm-option>
+            <hlm-option value="Clothing">Clothing</hlm-option>
+            <hlm-option value="Home Appliances">Home Appliances</hlm-option>
+            <hlm-option value="Beauty & Personal Care"
+              >Beauty & Personal Care</hlm-option
+            >
+            <hlm-option value="Sports & Outdoors">Sports & Outdoors</hlm-option>
+            <hlm-option value="Books">Books</hlm-option>
+            <hlm-option value="Toys & Games">Toys & Games</hlm-option>
+            <hlm-option value="Health & Wellness">Health & Wellness</hlm-option>
+            <hlm-option value="Jewelry & Accessories"
+              >Jewelry & Accessories</hlm-option
+            >
+            <hlm-option value="Furniture">Furniture</hlm-option>
+          </hlm-select-content>
+        </brn-select>
+        <hlm-error>Your category is required</hlm-error>
+      </hlm-form-field>
+      <hlm-form-field>
+        <label hlmLabel for="product-image">Product image url</label>
+        <input
+          hlmInput
+          type="text"
+          id="product-image"
+          name="product-image"
+          placeholder="Product image"
+          formControlName="image"
+        />
+      </hlm-form-field>
+      <hlm-form-field>
+        <div class="form-row">
+          <label hlmLabel for="description">Description</label>
+          <textarea
+            hlmInput
+            name="description"
+            id="description"
+            placeholder="Description about your product..."
+            formControlName="description"
+          ></textarea>
+        </div>
+      </hlm-form-field>
+      <button class="custom-button" type="submit">Add</button>
+    </form>
+  </hlm-sheet-content>
+</hlm-sheet>

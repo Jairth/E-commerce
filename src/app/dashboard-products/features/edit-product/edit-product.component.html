@@ -1,0 +1,109 @@
+<hlm-dialog>
+  <button id="edit-product" class="product-action" brnDialogTrigger>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="currentColor"
+      class="bi bi-pencil-square"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+      />
+      <path
+        fill-rule="evenodd"
+        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
+      />
+    </svg>
+  </button>
+
+  <hlm-dialog-content class="sm:max-w-[425px]" *brnDialogContent="let ctx">
+    <form
+      class="flow"
+      [formGroup]="productForm()"
+      (ngSubmit)="editProduct(ctx)"
+    >
+      <hlm-form-field>
+        <label hlmLabel for="product-name">Product name</label>
+        <input
+          required
+          hlmInput
+          type="text"
+          id="product-name"
+          name="product-name"
+          placeholder="Product name"
+          formControlName="name"
+        />
+        <hlm-error>Your product name is required</hlm-error>
+      </hlm-form-field>
+      <hlm-form-field>
+        <label hlmLabel for="product-price">Product price</label>
+        <input
+          required
+          hlmInput
+          type="text"
+          id="product-price"
+          name="product-price"
+          placeholder="Product price"
+          formControlName="price"
+        />
+        <hlm-error>Your product price is required</hlm-error>
+      </hlm-form-field>
+
+      <hlm-form-field>
+        <label hlmLabel for="category">Product category</label>
+        <brn-select
+          class="inline-block"
+          placeholder="Product category"
+          formControlName="category"
+        >
+          <hlm-select-trigger>
+            <hlm-select-value />
+          </hlm-select-trigger>
+          <hlm-select-content>
+            <hlm-option value="Electronics">Electronics</hlm-option>
+            <hlm-option value="Clothing">Clothing</hlm-option>
+            <hlm-option value="Home Appliances">Home Appliances</hlm-option>
+            <hlm-option value="Beauty & Personal Care"
+              >Beauty & Personal Care</hlm-option
+            >
+            <hlm-option value="Sports & Outdoors">Sports & Outdoors</hlm-option>
+            <hlm-option value="Books">Books</hlm-option>
+            <hlm-option value="Toys & Games">Toys & Games</hlm-option>
+            <hlm-option value="Health & Wellness">Health & Wellness</hlm-option>
+            <hlm-option value="Jewelry & Accessories"
+              >Jewelry & Accessories</hlm-option
+            >
+            <hlm-option value="Furniture">Furniture</hlm-option>
+          </hlm-select-content>
+        </brn-select>
+        <hlm-error>Your category is required</hlm-error>
+      </hlm-form-field>
+      <hlm-form-field>
+        <label hlmLabel for="product-image">Product image url</label>
+        <input
+          hlmInput
+          type="text"
+          id="product-image"
+          name="product-image"
+          placeholder="Product image"
+          formControlName="image"
+        />
+      </hlm-form-field>
+      <hlm-form-field>
+        <div class="form-row">
+          <label hlmLabel for="description">Description</label>
+          <textarea
+            hlmInput
+            name="description"
+            id="description"
+            placeholder="Description about your product..."
+            formControlName="description"
+          ></textarea>
+        </div>
+      </hlm-form-field>
+      <button class="custom-button" type="submit">Edit product</button>
+    </form>
+  </hlm-dialog-content>
+</hlm-dialog>
