@@ -1,11 +1,13 @@
+:host([svg-black]) {
+  --fill: #000;
+}
 [role="list"] {
   display: flex;
   gap: var(--gap, 1.5rem);
 
   a {
-
-    &:is(:hover,:focus, :focus-visible) svg {
-      fill: #ff6565
+    &:is(:hover, :focus, :focus-visible) svg {
+      fill: #ff6565;
     }
   }
   & svg {
@@ -15,4 +17,3 @@
     transition: fill var(--transition) ease;
   }
 }
-

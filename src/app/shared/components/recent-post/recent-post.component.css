@@ -21,7 +21,6 @@
 }
 .logo {
   & svg {
-
     font-size: 11.25rem;
   }
 }
@@ -57,17 +56,21 @@ app-socials {
 
   flex-flow: column nowrap;
   gap: 1.875rem;
+
+  @media (width <= 769px) {
+    gap: 0;
+  }
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   align-self: auto;
-  gap: .7rem;
+  gap: 0.7rem;
   margin-block-start: 1rem;
   margin-block-end: auto;
 
-  @media (width <= 768px) {
+  @media (width <= 769px) {
     & {
       margin-block-start: 0;
     }
@@ -76,7 +79,7 @@ app-socials {
 .tag {
   background-color: #fff;
 
-  font-size: .8125rem;
+  font-size: 0.8125rem;
   font-weight: 800;
   line-height: 0;
   text-transform: uppercase;
@@ -101,21 +104,16 @@ app-socials {
 
   gap: 2rem;
 
-
   @media (width <= 768px) {
     & {
       justify-content: flex-start;
-
     }
   }
-
 }
 .info {
-
   display: flex;
   flex-flow: column nowrap;
   gap: 0.9rem;
-
 
   & .title {
     font-size: 1rem;
@@ -129,11 +127,10 @@ app-socials {
   gap: 0.4rem;
 }
 .small-image {
-  --b-width: .125rem;
+  --b-width: 0.125rem;
   --b-radius: 2.5rem;
   border-radius: var(--b-radius);
   border: var(--b-width) solid #000;
-
 
   & img {
     min-width: 5.3125rem;
@@ -143,9 +140,8 @@ app-socials {
   }
 }
 .date {
-  font-size: .8125rem;
+  font-size: 0.8125rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-
